@@ -1,0 +1,193 @@
+/* Hero_home.css */
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.7);
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-left {
+  max-width: 500px;
+  color: white;
+  margin-left: 5%;
+}
+
+.hero-left h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-left p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 15%;
+}
+
+/* Camera Outline */
+.camera-outline {
+  width: 600px;
+  height: 450px;
+  background: transparent;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+/* Camera Viewfinder */
+.camera-viewfinder {
+  width: 40px;
+  height: 20px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+/* Camera Screen */
+.camera-screen {
+  width: 520px;
+  height: 520px;
+  background: #000;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.image-gallery {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-gallery img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-gallery img.active {
+  opacity: 1;
+}
+
+/* Camera Lens Outline */
+.camera-lens-outline {
+  width: 45px;
+  height: 55px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  margin-top: 10px;
+  position: relative;
+}
+
+.camera-lens-outline::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Camera Brand */
+.camera-brand {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+
+/* Add these styles to your existing Hero_home.css */
+
+/* Lens Flash Effect */
+.lens-flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.flash-active {
+  background: rgba(255, 255, 255, 0.9);
+  animation: cameraFlash 0.3s ease-out;
+}
+
+@keyframes cameraFlash {
+  0% {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Ensure camera-lens-outline has relative positioning for the flash effect */
+.camera-lens-outline {
+  position: relative;
+  /* Keep your existing styles for camera-lens-outline */
+}

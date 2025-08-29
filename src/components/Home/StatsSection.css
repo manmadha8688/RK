@@ -1,0 +1,118 @@
+/* Section Background */
+.stats-section {
+  position: relative;
+  padding: 6rem 2rem;
+  background: radial-gradient(circle at center, #0f0f1e, #050510);
+  color: #fff;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Title */
+.stats-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00eaff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.stats-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 4rem;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Grid Layout */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+/* Each Stat Box */
+.stat-item {
+  position: relative;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+  width: 220px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+}
+
+/* Animated Number */
+.stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #00ffea, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  display: inline-block;
+  margin-right: 0.2rem;
+  animation: pulseNumber 2s infinite;
+}
+
+.stat-plus,
+.stat-percent {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00eaff;
+  display: inline-block;
+  animation: bounceSuffix 2s infinite;
+}
+
+/* Label */
+.stat-label {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes pulseNumber {
+  0%, 100% { text-shadow: 0 0 20px rgba(0, 255, 255, 0.4); }
+  50% { text-shadow: 0 0 40px rgba(255, 0, 255, 0.8); }
+}
+
+@keyframes bounceSuffix {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

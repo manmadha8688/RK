@@ -1,0 +1,391 @@
+/* PersonalSection.css */
+.personal-section {
+  padding: 30px 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.personal-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.personal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.personal-text {
+  color: #fff;
+  position: relative;
+}
+
+.personal-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  line-height: 1.1;
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.personal-section.visible .title-part-1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.personal-section.visible .title-part-2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #FFD166, #6A0572);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.title-part-2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #FFD166, #6A0572);
+  border-radius: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease;
+  transition-delay: 1s;
+}
+
+.personal-section.visible .title-part-2::after {
+  transform: scaleX(1);
+}
+
+.animated-paragraphs {
+  margin-bottom: 2.5rem;
+}
+
+.paragraph {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  padding-left: 20px;
+}
+
+.paragraph::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.personal-section.visible .paragraph::before {
+  opacity: 1;
+}
+
+.text-reveal {
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.8s ease;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.personal-section.visible .text-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.personal-section.visible .paragraph:nth-child(1) .text-reveal {
+  transition-delay: 0.7s;
+}
+
+.personal-section.visible .paragraph:nth-child(2) .text-reveal {
+  transition-delay: 0.9s;
+}
+
+.personal-section.visible .paragraph:nth-child(3) .text-reveal {
+  transition-delay: 1.1s;
+}
+
+.extra-content {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}
+
+.personal-section.visible .extra-content {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 1.3s;
+}
+
+.extra-content .paragraph {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+}
+
+.extra-content .paragraph::before {
+  display: none;
+}
+
+.highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlight-list li {
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
+}
+
+.highlight-list li:last-child {
+  border-bottom: none;
+}
+
+.personal-section.visible .highlight-list li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.personal-section.visible .highlight-list li:nth-child(1) {
+  transition-delay: 1.5s;
+}
+
+.personal-section.visible .highlight-list li:nth-child(2) {
+  transition-delay: 1.7s;
+}
+
+.personal-section.visible .highlight-list li:nth-child(3) {
+  transition-delay: 1.9s;
+}
+
+
+
+.personal-image {
+  position: relative;
+  perspective: 1000px;
+}
+
+.image-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  transform: rotate3d(0.5, 1, 0, 15deg);
+  transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.personal-section.visible .image-container {
+  transform: rotate3d(0, 0, 0, 0deg);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 1s ease;
+  filter: grayscale(0.3);
+}
+
+.personal-section.visible .main-image {
+  transform: scale(1.05);
+  filter: grayscale(0);
+}
+
+.holo-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, 
+    rgba(255, 107, 107, 0.3), 
+    rgba(78, 205, 196, 0.3), 
+    rgba(255, 209, 102, 0.3), 
+    rgba(106, 5, 114, 0.3));
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 1s ease;
+  animation: holoShift 8s infinite linear;
+}
+
+.personal-section.visible .holo-glow {
+  opacity: 0.7;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(10, 10, 10, 0.2) 0%, 
+    rgba(10, 10, 10, 0.4) 100%);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.personal-section.visible .image-overlay {
+  opacity: 1;
+}
+
+/* Floating elements animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Holographic effect */
+@keyframes holoShift {
+  0% {
+    background-position: 0% 0%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(90deg);
+  }
+  100% {
+    background-position: 100% 100%;
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Subtle glow effect for text */
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .personal-container {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: center;
+  }
+  
+  .personal-title {
+    font-size: 3.5rem;
+  }
+  
+  .personal-image {
+    order: -1;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .paragraph::before {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 576px) {
+  .personal-section {
+    padding: 5rem 1.5rem;
+  }
+  
+  .personal-title {
+    font-size: 2.8rem;
+  }
+  
+  .text-reveal {
+    font-size: 1.1rem;
+  }
+  
+  .extra-content {
+    padding: 1.5rem;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+  border-radius: 4px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255, 107, 107, 0.3);
+  color: white;
+}
+
+/* Focus styles for accessibility */
+.personal-section:focus {
+  outline: 2px solid #4ECDC4;
+  outline-offset: 4px;
+}

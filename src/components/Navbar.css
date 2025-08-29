@@ -1,0 +1,145 @@
+/* Navbar base */
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: #000; /* solid black */
+  z-index: 100;
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem 0;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  transition: all 0.4s ease;
+}
+
+/* Container */
+.navbar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo + Name */
+.logo-name {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-name img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+.logo-name img:hover {
+  transform: scale(1.2) rotate(12deg);
+  filter: drop-shadow(0 0 15px #ffcc00); /* gold glow on hover */
+}
+
+.site-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-shadow: 0 0 6px #ffcc00; /* gold subtle glow */
+}
+
+/* Nav links center */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+
+/* Nav links base style */
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+/* Colorful glow underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6b6b, #ffcc00, #6bc1ff, #9bff6b); /* gradient glow */
+  box-shadow: 0 0 10px #ff6b6b, 0 0 10px #ffcc00, 0 0 10px #6bc1ff, 0 0 10px #9bff6b;
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Active link glow - single bright color */
+.nav-links a.active {
+  color: #00ffea; /* bright cyan, very visible on black */
+  text-shadow: 
+    0 0 8px #00ffea,  /* glow around text */
+    0 0 12px #00ffd5,
+    0 0 16px #00ffea;
+  transition: all 0.3s ease;
+}
+
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* below parent */
+  left: 0;
+  background: #111; /* dark, slight contrast */
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  min-width: 220px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown items */
+.dropdown-menu li a {
+  display: block;
+  padding: 0.7rem 1.5rem;
+  color: #fff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: linear-gradient(90deg, #ff6b6b, #ffcc00, #6bc1ff, #9bff6b);
+  color: #000;
+  transform: translateX(5px);
+  box-shadow: 0 0 12px rgba(255,107,107,0.7), 0 0 12px rgba(255,204,0,0.7),
+              0 0 12px rgba(107,193,255,0.7), 0 0 12px rgba(155,255,107,0.7);
+}
+
+/* Subtle floating effect on hover for nav links */
+.nav-links li a:hover {
+  transform: translateY(-2px);
+}

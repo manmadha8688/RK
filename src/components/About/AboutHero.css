@@ -1,0 +1,122 @@
+.about-hero {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #000000 0%, #0a0a2a 50%, #000000 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.cosmic-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  top: 0;
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  position: relative;
+  color: #fff;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.typewriter-text {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: -50px;
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Holographic Profile */
+.holographic-profile {
+  position: relative;
+  margin: auto;
+  width: 500px;
+  height: 500px;
+}
+
+.profile-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  animation: float-image 4s ease-in-out infinite;
+  filter: sepia(0.3) hue-rotate(180deg) contrast(1.2);
+}
+
+@keyframes float-image {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(10px) rotate(-1deg); }
+}
+
+
+
+
+/* Interactive Particles */
+.interactive-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-particle {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: float-particle 8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes float-particle {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-100px) rotate(180deg) scale(1.5);
+    opacity: 1;
+  }
+}
+
