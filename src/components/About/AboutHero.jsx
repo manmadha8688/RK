@@ -91,17 +91,7 @@ const AboutHero = () => {
           
 
           {/* Holographic Profile */}
-          <div className="holographic-profile">
-            <div className="profile-container">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&h=800&q=80"
-                alt="Photographer"
-                className="floating-image"
-              />
-              <div className="energy-orb"></div>
-              <div className="digital-grid"></div>
-            </div>
-          </div>
+          
         </div>
       </div>
 

@@ -1,193 +1,182 @@
-/* Hero_home.css */
-.home-hero {
+.hero-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  filter: brightness(0.7);
-}
-
-.hero-content {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  padding: 0 5%;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-left {
-  max-width: 500px;
-  color: white;
-  margin-left: 5%;
-}
-
-.hero-left h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-left p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-
-
-.hero-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  right: 15%;
+  background: #0a0a0a;
 }
 
-/* Camera Outline */
-.camera-outline {
-  width: 600px;
-  height: 450px;
-  background: transparent;
-  border: 3px solid rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  position: relative;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+/* Background image reveal */
+.background-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('/public/photos/came.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1s ease, transform 8s ease;
+  z-index: 1;
+}
+.background-image.reveal {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Camera styles */
+.camera {
+  position: absolute;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  animation: floatRotate 3s ease-in-out infinite;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  box-shadow: 0 0 20px rgba(255,200,0,0.5);
+  padding: 20px;
+  width: 200px;
+  height: 150px;
 }
 
-/* Camera Viewfinder */
-.camera-viewfinder {
-  width: 40px;
-  height: 20px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  border-radius: 4px;
-  position: absolute;
-  top: 15px;
-  left: 20px;
+@keyframes floatRotate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
 }
 
-/* Camera Screen */
-.camera-screen {
-  width: 520px;
-  height: 520px;
-  background: #000;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 30px;
-}
-
-.image-gallery {
-  width: 100%;
-  height: 100%;
+.camera-body {
+  width: 200px;
+  height: 150px;
+  border-radius: 8px;
   position: relative;
+  background: #222;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.2), 0 0 15px rgba(255,255,255,0.3);
 }
 
-.image-gallery img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.image-gallery img.active {
-  opacity: 1;
-}
-
-/* Camera Lens Outline */
-.camera-lens-outline {
-  width: 45px;
-  height: 55px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+.camera-lens {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at center, #555, #000);
   border-radius: 50%;
-  margin-top: 10px;
-  position: relative;
+  position: absolute;
+  top: 40px;
+  left: 70px;
+  border: 4px solid #fff;
+  animation: lensPulse 2s ease-in-out infinite;
 }
 
-.camera-lens-outline::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+@keyframes lensPulse {
+  0%,100% { transform: scale(1); box-shadow: 0 0 5px #fff; }
+  50% { transform: scale(1.1); box-shadow: 0 0 15px #ffdd55; }
+}
+
+.camera-flash {
+  width: 20px; height: 20px;
+  background: #fff;
   border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 20px; right: 20px;
+  opacity: 0.5;
+  animation: flashGlow 1.5s ease-in-out infinite;
 }
 
-/* Camera Brand */
-.camera-brand {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.8rem;
+@keyframes flashGlow {
+  0%,100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+.text-smile {
+  margin-top: 15px;
+  font-size: 3rem;
   font-weight: bold;
-  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00;
+  animation: smileBounce 2s ease-in-out infinite, smileGlow 1.5s ease-in-out infinite alternate;
 }
 
+@keyframes smileBounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
 
-/* Add these styles to your existing Hero_home.css */
+@keyframes smileGlow {
+  0% { text-shadow: 0 0 10px #fff, 0 0 20px #ffcc00; }
+  100% { text-shadow: 0 0 20px #fff, 0 0 30px #ffaa00; }
+}
 
-/* Lens Flash Effect */
-.lens-flash {
+/* Flash overlay */
+.flash-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0);
-  border-radius: 50%;
-  pointer-events: none;
-  transition: background 0.3s ease;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:white;
+  opacity:0;
+  z-index: 15;
+  pointer-events:none;
 }
 
-.flash-active {
-  background: rgba(255, 255, 255, 0.9);
-  animation: cameraFlash 0.3s ease-out;
+.flash-overlay.active {
+  animation: flash 0.3s ease-out forwards;
 }
 
-@keyframes cameraFlash {
-  0% {
-    background: rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
-  50% {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.6);
-  }
-  100% {
-    background: rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
+@keyframes flash {
+  0% { opacity: 0; transform: scale(1); }
+  20% { opacity: 0.9; transform: scale(1.02); }
+  50% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0; }
 }
 
-/* Ensure camera-lens-outline has relative positioning for the flash effect */
-.camera-lens-outline {
+/* Hide camera after flash */
+.camera.hide {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Hero content */
+.hero-content {
   position: relative;
-  /* Keep your existing styles for camera-lens-outline */
+  z-index: 5;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-left: 10%;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content button {
+  background: rgba(255,255,255,0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.hero-content button:hover {
+  background: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
 }

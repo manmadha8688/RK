@@ -1,0 +1,269 @@
+/* work Wrapper */
+.home-work {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;
+  justify-content: flex-start; /* push content from top */
+  padding-top: 10px; /* space for title */
+}
+
+/* Section Title */
+.mywork-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+  z-index: 2;
+}
+
+.mywork-title h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mywork-title p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+/* work Content (row layout) */
+.work-content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  z-index: 2;
+  padding: 0 5%;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+}
+
+
+.home-work::before,
+.home-work::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 2px);
+  background-size: 50px 50px;
+  animation: moveParticles 20s linear infinite;
+  opacity: 0.3;
+}
+
+.home-work::after {
+  background-size: 80px 80px;
+  animation-duration: 35s;
+  opacity: 0.2;
+}
+
+@keyframes moveParticles {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px);
+  }
+}
+
+
+
+.work-left {
+  color: white;
+  margin-left:5% ;
+}
+
+.work-left h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #ff6600, #ffaa00, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 4s ease-in-out infinite alternate;
+  
+}
+
+.work-left p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #ddd;
+  animation: fadeUp 1.5s ease-in-out;
+}
+
+@keyframes glowText {
+  from { text-shadow: 0 0 10px rgba(255, 120, 0, 0.6); }
+  to   { text-shadow: 0 0 30px rgba(255, 200, 120, 0.9); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Right Side Camera */
+.work-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 50%;
+  right: 5%;
+}
+
+/* Camera Outline */
+/* Camera Outline with Animated Border */
+.camera-outline {
+  width: 700px;
+  height: 450px;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  animation: floatCamera 6s ease-in-out infinite alternate;
+  z-index: 1; /* keep content above pseudo borders */
+}
+
+/* Gradient Border */
+.camera-outline::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 16px;
+  background: conic-gradient(
+    from 0deg,
+    #ff007f,
+    #ff8800,
+    #00ffee,
+    #0080ff,
+    #ff007f
+  );
+  animation: rotateBorder 5s linear infinite;
+  z-index: -2;
+}
+
+/* Inner background (mask to keep border only) */
+.camera-outline::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  z-index: -1;
+}
+
+/* Border rotation animation */
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes floatCamera {
+  from { transform: translateY(0); }
+  to { transform: translateY(-12px); }
+}
+
+/* Camera Viewfinder */
+.camera-viewfinder {
+  width: 40px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+/* Camera Screen */
+.camera-screen {
+  width: 620px;
+  height: 320px;
+  background: #000;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 30px;
+  position: relative;
+}
+
+.image-gallery {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.image-gallery img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  border-radius: 6px;
+}
+
+.image-gallery img.active {
+  opacity: 1;
+}
+
+/* Camera Lens Outline */
+.camera-lens-outline {
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  margin-top: 10px;
+  position: relative;
+}
+
+/* Flash Effect */
+.lens-flash {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.flash-active {
+  background: rgba(255, 255, 255, 0.9);
+  animation: cameraFlash 0.3s ease-out;
+}
+
+@keyframes cameraFlash {
+  0% { background: rgba(255, 255, 255, 0); }
+  50% { background: rgba(255, 255, 255, 0.9); box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.6); }
+  100% { background: rgba(255, 255, 255, 0); }
+}
+
+/* Camera Brand */
+.camera-brand {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}

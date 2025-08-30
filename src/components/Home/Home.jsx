@@ -4,6 +4,7 @@ import StatsSection from './StateSection'
 import Testimonials from './Testimonials'
 import CTASection from './CTASection'
 import WhyChooseSection from './WhyChooseSection'
+import MyWork from './MyWork'
 
 function Home() {
   return (
@@ -11,6 +12,8 @@ function Home() {
 
         <Hero_home />
         <StatsSection />
+        <MyWork />
+        
         <Testimonials />
         <WhyChooseSection />
         <CTASection />
