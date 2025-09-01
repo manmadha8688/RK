@@ -16,14 +16,7 @@ const Navbar = () => {
           <li><NavLink to="/" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink></li>
           <li><NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About</NavLink></li>
           <li><NavLink to="/portfolio" className={({ isActive }) => isActive ? "active" : ""}>Portfolio</NavLink></li>
-          <li className="dropdown">
-            <NavLink to="/services" className={({ isActive }) => isActive ? "active" : ""}>Services</NavLink>
-            <ul className="dropdown-menu">
-              <li><NavLink to="/services/wedding">Wedding Shoot</NavLink></li>
-              <li><NavLink to="/services/birthday">Birthday Shoot</NavLink></li>
-              <li><NavLink to="/services/prewedding">Pre-wedding Shoot</NavLink></li>
-            </ul>
-          </li>
+          <li> <NavLink to="/services" className={({ isActive }) => isActive ? "active" : ""}>Services</NavLink></li>
           <li><NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>Contact</NavLink></li>
         </ul>
       </div>

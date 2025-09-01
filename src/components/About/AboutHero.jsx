@@ -62,7 +62,7 @@ const AboutHero = () => {
     const text = "CAPTURING SOULS THROUGH LENS";
     let index = 0;
     const typeWriter = () => {
-      if (index < text.length) {
+      if (index < text.length && textRef.current) {
         textRef.current.innerHTML += text.charAt(index);
         index++;
         setTimeout(typeWriter, 100);

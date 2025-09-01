@@ -92,53 +92,6 @@
 }
 
 
-/* Dropdown */
-.dropdown {
-  position: relative;
-}
-
-/* Dropdown menu */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%; /* below parent */
-  left: 0;
-  background: #111; /* dark, slight contrast */
-  padding: 0.5rem 0;
-  border-radius: 10px;
-  min-width: 220px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  pointer-events: none;
-  z-index: 50;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* Dropdown items */
-.dropdown-menu li a {
-  display: block;
-  padding: 0.7rem 1.5rem;
-  color: #fff;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.dropdown-menu li a:hover {
-  background: linear-gradient(90deg, #ff6b6b, #ffcc00, #6bc1ff, #9bff6b);
-  color: #000;
-  transform: translateX(5px);
-  box-shadow: 0 0 12px rgba(255,107,107,0.7), 0 0 12px rgba(255,204,0,0.7),
-              0 0 12px rgba(107,193,255,0.7), 0 0 12px rgba(155,255,107,0.7);
-}
-
 /* Subtle floating effect on hover for nav links */
 .nav-links li a:hover {
   transform: translateY(-2px);

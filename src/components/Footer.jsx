@@ -23,23 +23,12 @@ const Footer = () => {
       icon: "fab fa-twitter",
       color: "#1DA1F2"
     },
-    {
-      name: "Pinterest",
-      url: "https://pinterest.com",
-      icon: "fab fa-pinterest-p",
-      color: "#BD081C"
-    },
+    
     {
       name: "YouTube",
       url: "https://youtube.com",
       icon: "fab fa-youtube",
       color: "#FF0000"
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com",
-      icon: "fab fa-linkedin-in",
-      color: "#0077B5"
     }
   ];
 
