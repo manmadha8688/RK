@@ -180,3 +180,115 @@
   background: rgba(255,255,255,0.3);
   transform: translateY(-2px);
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-left: 5%;
+  }
+  .hero-content p {
+    font-size: 1.3rem;
+  }
+  .camera {
+    width: 180px;
+    height: 135px;
+    padding: 15px;
+  }
+  .camera-body {
+    width: 180px;
+    height: 135px;
+  }
+  .camera-lens {
+    width: 50px;
+    height: 50px;
+    top: 35px;
+    left: 65px;
+  }
+  .text-smile {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 90vh;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-left: 0;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  .hero-content button {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+  .camera {
+    width: 150px;
+    height: 110px;
+    padding: 10px;
+  }
+  .camera-body {
+    width: 150px;
+    height: 110px;
+  }
+  .camera-lens {
+    width: 40px;
+    height: 40px;
+    top: 30px;
+    left: 55px;
+  }
+  .camera-flash {
+    width: 15px;
+    height: 15px;
+    top: 15px;
+    right: 15px;
+  }
+  .text-smile {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    height: 80vh;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-content button {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+  .camera {
+    width: 120px;
+    height: 90px;
+    padding: 8px;
+  }
+  .camera-body {
+    width: 120px;
+    height: 90px;
+  }
+  .camera-lens {
+    width: 30px;
+    height: 30px;
+    top: 25px;
+    left: 45px;
+  }
+  .camera-flash {
+    width: 12px;
+    height: 12px;
+    top: 10px;
+    right: 10px;
+  }
+  .text-smile {
+    font-size: 1.5rem;
+    margin-top: 8px;
+  }
+}

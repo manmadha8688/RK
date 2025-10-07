@@ -1,4 +1,5 @@
-.about-cta-section {
+.about-cta-section { 
+  
   padding: 50px 0;
   background: #2c3e50;
   color: white;
@@ -65,4 +66,69 @@
 .cta-button.secondary:hover {
   background: white;
   color: #2c3e50;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .about-cta-section h2 {
+    font-size: 2.8rem;
+  }
+  .about-cta-section p {
+    font-size: 1.25rem;
+  }
+  .cta-button {
+    padding: 17px 38px;
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-cta-section h2 {
+    font-size: 2.5rem;
+  }
+  .about-cta-section p {
+    font-size: 1.2rem;
+  }
+  .cta-button {
+    padding: 16px 35px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-cta-section {
+    padding: 40px 20px;
+  }
+  .about-cta-section h2 {
+    font-size: 2rem;
+  }
+  .about-cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .cta-button {
+    padding: 14px 30px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-cta-section {
+    padding: 30px 15px;
+  }
+  .about-cta-section h2 {
+    font-size: 1.8rem;
+  }
+  .about-cta-section p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
 }

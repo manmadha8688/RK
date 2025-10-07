@@ -54,6 +54,34 @@
   position: relative;
 }
 
+/* Hamburger Menu Icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Nav links base style */
 .nav-links a {
   text-decoration: none;
@@ -95,4 +123,87 @@
 /* Subtle floating effect on hover for nav links */
 .nav-links li a:hover {
   transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+  .nav-links {
+    gap: 1.5rem;
+  }
+  .site-name {
+    font-size: 1.3rem;
+  }
+  .logo-name img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+  .navbar-container {
+    padding: 0 20px;
+  }
+  .menu-icon {
+    display: flex;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    text-align: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  }
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .site-name {
+    font-size: 1.2rem;
+  }
+  .logo-name img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 0;
+  }
+  .navbar-container {
+    padding: 0 15px;
+  }
+  .nav-links {
+    gap: 0.8rem;
+  }
+  .site-name {
+    font-size: 1.1rem;
+  }
+  .logo-name img {
+    width: 35px;
+    height: 35px;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+  .bar {
+    width: 20px;
+    height: 2px;
+  }
 }

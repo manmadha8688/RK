@@ -196,3 +196,57 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cta-portfolio-section {
+    padding: 40px 15px;
+  }
+  .cta-content .cta-h2 {
+    font-size: 2.8rem;
+  }
+  .cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+  }
+  .cta-button.primary {
+    padding: 14px 40px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-portfolio-section {
+    padding: 35px 10px;
+  }
+  .cta-content .cta-h2 {
+    font-size: 2.4rem;
+    letter-spacing: 1.5px;
+  }
+  .cta-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  .cta-button.primary {
+    padding: 12px 35px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-portfolio-section {
+    padding: 30px 5px;
+  }
+  .cta-content .cta-h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  .cta-content p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  .cta-button.primary {
+    padding: 10px 30px;
+    font-size: 0.9rem;
+  }
+}

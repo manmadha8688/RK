@@ -136,4 +136,45 @@
   }
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-hero {
+    height: 60vh;
+  }
+  .contact-title {
+    font-size: 2.2rem;
+  }
+  .contact-subtitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero {
+    height: 50vh;
+  }
+  .contact-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  .contact-subtitle {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero {
+    height: 40vh;
+  }
+  .contact-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  .contact-subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+  }
+}
+
 

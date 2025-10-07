@@ -1,5 +1,7 @@
 /* PersonalSection.css */
-.personal-section {
+.personal-section { 
+
+  
   padding: 30px 0;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   position: relative;
@@ -323,26 +325,65 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .personal-container {
+    gap: 4rem;
+  }
+  .personal-title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .personal-container {
+    gap: 3rem;
+  }
+  .personal-title {
+    font-size: 3.8rem;
+  }
+  .text-reveal {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 968px) {
   .personal-container {
     grid-template-columns: 1fr;
     gap: 4rem;
     text-align: center;
   }
-  
+
   .personal-title {
     font-size: 3.5rem;
   }
-  
+
   .personal-image {
     order: -1;
     max-width: 500px;
     margin: 0 auto;
   }
-  
+
   .paragraph::before {
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .personal-section {
+    padding: 4rem 1rem;
+  }
+  .personal-title {
+    font-size: 3rem;
+  }
+  .text-reveal {
+    font-size: 1rem;
+  }
+  .extra-content {
+    padding: 1.8rem;
+  }
+  .highlight-list li {
+    font-size: 1rem;
   }
 }
 
@@ -350,17 +391,37 @@
   .personal-section {
     padding: 5rem 1.5rem;
   }
-  
+
   .personal-title {
     font-size: 2.8rem;
   }
-  
+
   .text-reveal {
     font-size: 1.1rem;
   }
-  
+
   .extra-content {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .personal-section {
+    padding: 3rem 1rem;
+    min-height: auto;
+  }
+  .personal-title {
+    font-size: 2.5rem;
+  }
+  .text-reveal {
+    font-size: 1rem;
+  }
+  .extra-content {
+    padding: 1.2rem;
+  }
+  .highlight-list li {
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
   }
 }
 

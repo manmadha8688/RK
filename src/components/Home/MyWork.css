@@ -278,3 +278,121 @@
   font-weight: bold;
   letter-spacing: 2px;
 }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mywork-title h2 {
+    font-size: 2.5rem;
+  }
+  .mywork-title p {
+    font-size: 1.1rem;
+  }
+  .work-content {
+    padding: 0 3%;
+    gap: 15px;
+  }
+  .work-left h2 {
+    font-size: 2.5rem;
+  }
+  .work-left p {
+    font-size: 1.1rem;
+  }
+  .camera-outline {
+    width: 600px;
+    height: 400px;
+  }
+  .camera-screen {
+    width: 550px;
+    height: 280px;
+  }
+  .camera-lens-outline {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-work {
+    padding-top: 5px;
+  }
+  .mywork-title {
+    margin-bottom: 30px;
+  }
+  .mywork-title h2 {
+    font-size: 2rem;
+  }
+  .mywork-title p {
+    font-size: 1rem;
+  }
+  .work-content {
+    flex-direction: column;
+    padding: 0 2%;
+    gap: 30px;
+  }
+  .work-left {
+    max-width: 100%;
+  }
+  .work-right {
+    max-width: 100%;
+  }
+  .work-left h2 {
+    font-size: 2rem;
+  }
+  .work-left p {
+    font-size: 1rem;
+  }
+  .camera-outline {
+    width: 500px;
+    height: 350px;
+  }
+  .camera-screen {
+    width: 450px;
+    height: 250px;
+  }
+  .camera-lens-outline {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-work {
+    padding-top: 0;
+  }
+  .mywork-title {
+    margin-bottom: 20px;
+  }
+  .mywork-title h2 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+  .mywork-title p {
+    font-size: 0.95rem;
+  }
+  .work-content {
+    padding: 0 1%;
+    gap: 20px;
+  }
+  .work-left h2 {
+    font-size: 1.8rem;
+  }
+  .work-left p {
+    font-size: 0.95rem;
+  }
+  .camera-outline {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+  }
+  .camera-screen {
+    width: 350px;
+    height: 200px;
+  }
+  .camera-lens-outline {
+    width: 35px;
+    height: 35px;
+  }
+  .camera-brand {
+    font-size: 0.7rem;
+  }
+}
